@@ -1,4 +1,5 @@
 var app = angular.module('App', []);
-app.controller('Controller', function($scope){
-    
+app.controller('Controller', $scope => {
+    $scope.isim = "Kod";
+    $scope.soyisim = "Evreni";
 });
