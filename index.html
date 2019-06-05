@@ -7,7 +7,11 @@
     <title>AngularJS - Kod Evreni</title>
 </head>
 <body ng-controller="Controller">
-    {{5+5}}
+    <label for="">1. Sayı</label><br />
+    <input type="number" ng-model="sayi1" /><br />
+    <label for="">2. Sayı</label><br />
+    <input type="number" ng-model="sayi2"><br />
+    {{sayi1 + sayi2}}
     <script src="angular.min.js"></script>
     <script src="custom.js"></script>
 </body>
