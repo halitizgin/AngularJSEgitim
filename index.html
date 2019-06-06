@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AngularJS - Kod Evreni</title>
 </head>
-<body ng-controller="Controller" ng-init="init()">
-    <label>Açıklama girin: </label><br />
-    <textarea ng-model="aciklama">
-
-    </textarea><br/>
-    <label for="" ng-bind="aciklama"></label><br/>
+<body ng-controller="Controller">
+    <label>İsim:</label><br/>
+    <input type="text" ng-model="isim" placeholder="İsim" /><br />
+    <div ng-show="isim == 'Halit'">
+        <h4>Ooo, sen misin? Hoşgeldin kardeşim.</h4>
+    </div><br/>
+    <label>Yazılabilsin mi:</label>
+    <input type="checkbox" ng-model="readonly" /><br />
+    <input type="text" placeholder="Metin" ng-readonly="readonly" /><br/>
+    <button ng-disabled="isim == '' || !readonly">Tıkla</button>
     <script src="angular.min.js"></script>
     <script src="custom.js"></script>
 </body>
