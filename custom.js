@@ -1,5 +1,6 @@
 var app = angular.module('App', []);
 app.controller('Controller', $scope => {
-    $scope.isim = "Kod";
-    $scope.soyisim = "Evreni";
+    $scope.init = function(){
+        console.log("Merhaba Kod Evreni");
+    }
 });

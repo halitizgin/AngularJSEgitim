@@ -6,8 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AngularJS - Kod Evreni</title>
 </head>
-<body ng-controller="Controller">
-    {{isim + " " + soyisim}}
+<body ng-controller="Controller" ng-init="init()">
+    <label>Açıklama girin: </label><br />
+    <textarea ng-model="aciklama">
+
+    </textarea><br/>
+    <label for="" ng-bind="aciklama"></label><br/>
     <script src="angular.min.js"></script>
     <script src="custom.js"></script>
 </body>
