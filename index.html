@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AngularJS - Kod Evreni</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body ng-controller="Controller">
-    <label>İsim:</label><br/>
-    <input type="text" ng-model="isim" placeholder="İsim" /><br />
-    <div ng-show="isim == 'Halit'">
-        <h4>Ooo, sen misin? Hoşgeldin kardeşim.</h4>
-    </div><br/>
-    <label>Yazılabilsin mi:</label>
-    <input type="checkbox" ng-model="readonly" /><br />
-    <input type="text" placeholder="Metin" ng-readonly="readonly" /><br/>
-    <button ng-disabled="isim == '' || !readonly">Tıkla</button>
+<body ng-controller="Controller" ng-init="stil1 = 'arkaplan1'; stil2 = 'arkaplan2'">
+    <input type="text" ng-model="isim" /><br>
+    <div ng-if="isim == 'Halit'">
+        <h4>Merhaba kardeşim.</h4>
+    </div><br>
+    <input type="checkbox" ng-model="apply"><br>
+    <div ng-class="apply ? stil2 : stil1">
+        <h4>Arkaplan.</h4>
+    </div><br>
+    <select ng-model="style">
+        <option value="siyah">Siyah</option>
+        <option value="gri">Gri</option>
+    </select><br>
+    <div ng-style="style == 'siyah' ? style1 : style2">
+        <h4>ng-style ile stillendirme.</h4>
+    </div>
     <script src="angular.min.js"></script>
     <script src="custom.js"></script>
 </body>
