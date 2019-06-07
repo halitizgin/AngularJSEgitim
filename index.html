@@ -7,21 +7,14 @@
     <title>AngularJS - Kod Evreni</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-<body ng-controller="Controller" ng-init="stil1 = 'arkaplan1'; stil2 = 'arkaplan2'">
-    <input type="text" ng-model="isim" /><br>
-    <div ng-if="isim == 'Halit'">
-        <h4>Merhaba kardeşim.</h4>
+<body ng-controller="Controller">
+    <button ng-click="toggleFirst()">{{textFirst}}</button><br>
+    <div class="ilk" ng-show="showFirst">
+        <h4>Kod Evreni AngularJS Dersleri</h4>
     </div><br>
-    <input type="checkbox" ng-model="apply"><br>
-    <div ng-class="apply ? stil2 : stil1">
-        <h4>Arkaplan.</h4>
-    </div><br>
-    <select ng-model="style">
-        <option value="siyah">Siyah</option>
-        <option value="gri">Gri</option>
-    </select><br>
-    <div ng-style="style == 'siyah' ? style1 : style2">
-        <h4>ng-style ile stillendirme.</h4>
+    <button ng-click="toggleLast()">{{textLast}}</button><br>
+    <div class="ikinci" ng-show="showLast">
+        <h4>Kod Evreni Ready</h4>
     </div>
     <script src="angular.min.js"></script>
     <script src="custom.js"></script>

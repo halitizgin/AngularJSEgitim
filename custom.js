@@ -1,12 +1,27 @@
 var app = angular.module('App', []);
 app.controller('Controller', $scope => {
-    $scope.style = 'siyah';
-    $scope.style1 = {
-        'background-color': 'black', 
-        'color': 'white'
+    $scope.showFirst = false;
+    $scope.showLast = false;
+    $scope.textFirst = "Göster";
+    $scope.textLast = "Göster";
+    $scope.toggleFirst = () => {
+        $scope.showFirst = !$scope.showFirst;
+        if ($scope.textFirst === "Göster"){
+            $scope.textFirst = "Gizle";
+        }
+        else
+        {
+            $scope.textFirst = "Göster";
+        }
     }
-    $scope.style2 = {
-        'background-color': 'gray', 
-        'color': 'blue'
+    $scope.toggleLast = () => {
+        $scope.showLast = !$scope.showLast;
+        if ($scope.textLast === "Göster"){
+            $scope.textLast = "Gizle";
+        }
+        else
+        {
+            $scope.textLast = "Göster";
+        }
     }
 });

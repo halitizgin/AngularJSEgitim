@@ -1,14 +1,15 @@
-.arkaplan1{
-    background-color: cyan;
+.ilk{
+    background-color: #ccc;
     color: #000000;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    width: 50%;
+    margin-top: 10px;
 }
-.arkaplan2{
-    background-color: brown;
+
+.ikinci{
+    background-color: darkred;
     color: #ffffff;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    width: 50%;
+    margin-top: 10px;
 }
