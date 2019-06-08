@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body ng-controller="Controller">
-    <button ng-click="toggleFirst()">{{textFirst}}</button><br>
-    <div class="ilk" ng-show="showFirst">
-        <h4>Kod Evreni AngularJS Dersleri</h4>
-    </div><br>
-    <button ng-click="toggleLast()">{{textLast}}</button><br>
-    <div class="ikinci" ng-show="showLast">
-        <h4>Kod Evreni Ready</h4>
-    </div>
+    <input type="text" ng-model="searchName" placeholder="Aramak istediğiniz ismi yazın" /><br>
+    <select ng-model="searchThread">
+        <option value="PHP">PHP</option>
+        <option value="JS">JS</option>
+        <option value="Arduino">Arduino</option>
+        <option value="Unity">Unity</option>
+    </select><br>
+    <button ng-click="isim()">İsim</button>
+    <button ng-click="konu()">Konu</button>
+    <ul ng-repeat="kisi in kisiler | filter:searchName | filter:searchThread | orderBy: order: reverse">
+        <li>İsim: {{kisi.isim}} | Konu: {{kisi.konu}}</li>
+    </ul>
     <script src="angular.min.js"></script>
     <script src="custom.js"></script>
 </body>

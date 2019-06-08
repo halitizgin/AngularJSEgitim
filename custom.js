@@ -1,27 +1,25 @@
 var app = angular.module('App', []);
 app.controller('Controller', $scope => {
-    $scope.showFirst = false;
-    $scope.showLast = false;
-    $scope.textFirst = "Göster";
-    $scope.textLast = "Göster";
-    $scope.toggleFirst = () => {
-        $scope.showFirst = !$scope.showFirst;
-        if ($scope.textFirst === "Göster"){
-            $scope.textFirst = "Gizle";
-        }
-        else
-        {
-            $scope.textFirst = "Göster";
-        }
+    $scope.kisiler = [
+        { isim: 'Halit', konu: 'JS' }, 
+        { isim: 'Yasin', konu: 'PHP' }, 
+        { isim: 'Burak', konu: 'Arduino' }, 
+        { isim: 'Mert', konu: 'Unity' },
+        { isim: 'Ali', konu: 'JS' }, 
+        { isim: 'Veli', konu: 'PHP' }, 
+        { isim: 'Mehmet', konu: 'Arduino' }, 
+        { isim: 'Ahmet', konu: 'Unity' }
+    ];
+    $scope.order = 'isim';
+    $scope.reverse = false;
+
+    $scope.isim = () => {
+        $scope.order = 'isim';
+        $scope.reverse = !$scope.reverse;
     }
-    $scope.toggleLast = () => {
-        $scope.showLast = !$scope.showLast;
-        if ($scope.textLast === "Göster"){
-            $scope.textLast = "Gizle";
-        }
-        else
-        {
-            $scope.textLast = "Göster";
-        }
+
+    $scope.konu = () => {
+        $scope.order = 'konu';
+        $scope.reverse = !$scope.reverse;
     }
 });
