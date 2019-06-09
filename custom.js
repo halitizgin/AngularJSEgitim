@@ -1,25 +1,15 @@
 var app = angular.module('App', []);
-app.controller('Controller', $scope => {
-    $scope.kisiler = [
-        { isim: 'Halit', konu: 'JS' }, 
-        { isim: 'Yasin', konu: 'PHP' }, 
-        { isim: 'Burak', konu: 'Arduino' }, 
-        { isim: 'Mert', konu: 'Unity' },
-        { isim: 'Ali', konu: 'JS' }, 
-        { isim: 'Veli', konu: 'PHP' }, 
-        { isim: 'Mehmet', konu: 'Arduino' }, 
-        { isim: 'Ahmet', konu: 'Unity' }
-    ];
-    $scope.order = 'isim';
-    $scope.reverse = false;
-
-    $scope.isim = () => {
-        $scope.order = 'isim';
-        $scope.reverse = !$scope.reverse;
-    }
-
-    $scope.konu = () => {
-        $scope.order = 'konu';
-        $scope.reverse = !$scope.reverse;
-    }
+app.controller('Controller', ($scope, $http, $httpParamSerializerJQLike) => {
+    $http({
+        method: "POST",
+        url: "rest/api.php",
+        data: $httpParamSerializerJQLike({
+            param: 'Kod Evreni'
+        }),
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    }).then(function(response){
+        alert(response.data);
+    });
 });
